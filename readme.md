@@ -6,3 +6,5 @@
 * https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer/
 * https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools/
 * https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Design/
+* https://www.nuget.org/packages/Microsoft.VisualStudio.Web.CodeGeneration.Design/
+* https://www.nuget.org/packages/Microsoft.AspNet.WebApi.Cors/

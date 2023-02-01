@@ -39,7 +39,7 @@ namespace InspectionAPI.Controllers
                 return NotFound();
             }
 
-            return inspection;
+            return Ok(inspection);
         }
 
         // PUT: api/Inspections/5

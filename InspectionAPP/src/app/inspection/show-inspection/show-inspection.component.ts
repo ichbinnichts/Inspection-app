@@ -22,6 +22,7 @@ export class ShowInspectionComponent {
   }
   ngOnInit(): void {
     this.inspectionList$ = this.service.getInspectionList();
+    this.inspectionTypesList$ = this.service.getInspectionTypeList();
   }
 
 }

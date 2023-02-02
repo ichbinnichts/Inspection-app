@@ -55,4 +55,10 @@ export class InspectionApiService {
   addStatus(data:any){
     return this.http.post(this.inspectionApiUrl + '/status', data);
   }
+  updateStatus(id:number|string, data:any){
+    return this.http.put(this.inspectionApiUrl + `/status/${id}`, data);
+  }
+  deleteStatus(id:number|string){
+    return this.http.delete(this.inspectionApiUrl + `/status/${id}`);
+  }
 }

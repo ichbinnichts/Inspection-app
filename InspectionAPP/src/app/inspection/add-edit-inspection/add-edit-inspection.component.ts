@@ -33,4 +33,11 @@ export class AddEditInspectionComponent {
     this.inspectionTypesList$ = this.service.getInspectionTypeList();
 
   }
+
+  addInspection(){
+
+  }
+  updateInspection(){
+    
+  }
 }

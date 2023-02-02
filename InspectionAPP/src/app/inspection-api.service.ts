@@ -18,4 +18,9 @@ export class InspectionApiService {
   addInspection(data:any){
     return this.http.post(this.inspectionApiUrl + '/inspections', data);
   }
+  
+  updateInspection(id:number|string, data:any){
+    return this.http.put(this.inspectionApiUrl + `/inspections/${id}`, data);
+
+  }
 }

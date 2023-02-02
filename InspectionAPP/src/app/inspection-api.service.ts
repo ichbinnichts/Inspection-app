@@ -33,12 +33,26 @@ export class InspectionApiService {
   //InspectionType methods
 
   getInspectionTypeList():Observable<any[]> {
-    return this.http.get<any>(this.inspectionApiUrl + 'inspectionTypes');
+    return this.http.get<any>(this.inspectionApiUrl + '/inspectionTypes');
   }
 
   addInspectionType(data:any){
     return this.http.post(this.inspectionApiUrl + '/inspectionTypes', data);
   }
 
-  
+  updateInspectionType(id:number|string, data:any){
+    return this.http.put(this.inspectionApiUrl + `/inspectionTypes/${id}`, data);
+  }
+  deleteInspectionType(id:number|string){
+    return this.http.delete(this.inspectionApiUrl + `/inspectionTypes/${id}`);
+  }
+
+  //Status methods
+
+  getStatuses(): Observable<any[]> {
+    return this.http.get<any>(this.inspectionApiUrl + '/status');
+  }
+  addStatus(data:any){
+    return this.http.post(this.inspectionApiUrl + '/status', data);
+  }
 }

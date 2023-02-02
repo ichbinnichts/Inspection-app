@@ -9,4 +9,18 @@ import { InspectionApiService } from 'src/app/inspection-api.service';
 })
 export class ShowInspectionComponent {
 
+
+  inspectionList$!:Observable<any[]>;
+  inspectionTypesList$!:Observable<any[]>;
+  statusList$!:Observable<any[]>;
+
+  constructor(private service:InspectionApiService){
+
+  }
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    
+  }
+
 }

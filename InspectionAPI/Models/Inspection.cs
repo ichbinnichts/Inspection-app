@@ -5,7 +5,7 @@ namespace InspectionAPI.Models
 {
     public class Inspection
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        //[Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [StringLength(20)]
         public string Status { get; set; } = string.Empty;

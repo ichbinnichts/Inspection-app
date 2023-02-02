@@ -12,7 +12,9 @@ export class ShowInspectionComponent {
 
   inspectionList$!:Observable<any[]>;
   inspectionTypesList$!:Observable<any[]>;
-  statusList$!:Observable<any[]>;
+  inspectionTypesList:any=[];
+
+  
 
   constructor(private service:InspectionApiService){
 

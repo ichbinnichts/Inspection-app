@@ -10,7 +10,7 @@ import { InspectionApiService } from 'src/app/inspection-api.service';
 export class ShowInspectionComponent {
   //Variables
   activateAddEditInspectionComponent: boolean = false;
-  addModalTitle: string = "Add Inspection";
+  addModalTitle: string = '';
   inspection:any;
 
   inspectionList$!:Observable<any[]>;
@@ -27,6 +27,17 @@ export class ShowInspectionComponent {
     this.inspectionList$ = this.service.getInspectionList();
     this.inspectionTypesList$ = this.service.getInspectionTypeList();
     this.refreshInspectionTypesMap();
+  }
+
+  modalAdd(){
+    this.inspection = {
+      id:0,
+      status:null,
+      comments:null,
+      inspectionTypeId:null
+    }
+    this.addModalTitle = 'Add Inspection';
+    this.activateAddEditInspectionComponent = true;
   }
 
   refreshInspectionTypesMap(){

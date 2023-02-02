@@ -31,4 +31,14 @@ export class InspectionApiService {
   }
 
   //InspectionType methods
+
+  getInspectionTypeList():Observable<any[]> {
+    return this.http.get<any>(this.inspectionApiUrl + 'inspectionTypes');
+  }
+
+  addInspectionType(data:any){
+    return this.http.post(this.inspectionApiUrl + '/inspectionTypes', data);
+  }
+
+  
 }

@@ -14,15 +14,14 @@ export class ShowInspectionComponent {
   inspectionTypesList$!:Observable<any[]>;
   inspectionTypesList:any=[];
 
-  
+  //Map to display associate with foreign keys
+  inspectionTypesMap:Map<number, string> = new Map();
 
   constructor(private service:InspectionApiService){
 
   }
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    
+    this.inspectionList$ = this.service.getInspectionList();
   }
 
 }

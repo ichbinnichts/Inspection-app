@@ -23,6 +23,18 @@ export class ShowInspectionComponent {
   ngOnInit(): void {
     this.inspectionList$ = this.service.getInspectionList();
     this.inspectionTypesList$ = this.service.getInspectionTypeList();
+    this.refreshInspectionTypesMap();
+  }
+
+  refreshInspectionTypesMap(){
+    this.service.getInspectionTypeList().subscribe(data => {
+      this.inspectionTypesList = data;
+
+      for(let i=0;i<data.length;i++){
+        this.inspectionTypesMap.set(this.inspectionTypesList[i], 
+          this.inspectionTypesList[i].inpectionName);
+      }
+    })
   }
 
 }

@@ -8,7 +8,10 @@ import { InspectionApiService } from 'src/app/inspection-api.service';
   styleUrls: ['./show-inspection.component.css']
 })
 export class ShowInspectionComponent {
+  //Variables
+  activateAddEditInspectionComponent: boolean = false;
   addModalTitle: string = "Add Inspection";
+  inspection:any;
 
   inspectionList$!:Observable<any[]>;
   inspectionTypesList$!:Observable<any[]>;

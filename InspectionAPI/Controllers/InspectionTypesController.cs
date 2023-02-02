@@ -38,9 +38,10 @@ namespace InspectionAPI.Controllers
             _context.InspectionTypes.Add(inspectionType);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetInspection", new { id = inspectionType.Id }, inspectionType);
+            return Ok(inspectionType);
         }
         //PUT 
+        [HttpPut("{id}")]
         public async Task<IActionResult> PutInspectionType(InspectionType request)
         {
             var inspectionType = _context.InspectionTypes.FindAsync(request.Id);

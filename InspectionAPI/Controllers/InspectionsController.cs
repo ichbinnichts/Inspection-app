@@ -81,7 +81,7 @@ namespace InspectionAPI.Controllers
             _context.Inspections.Add(inspection);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetInspection", new { id = inspection.Id }, inspection);
+            return Ok(inspection);
         }
 
         // DELETE: api/Inspections/5

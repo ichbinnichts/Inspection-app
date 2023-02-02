@@ -8,3 +8,4 @@
 * https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Design/
 * https://www.nuget.org/packages/Microsoft.VisualStudio.Web.CodeGeneration.Design/
 * https://www.nuget.org/packages/Microsoft.AspNet.WebApi.Cors/
+* https://getbootstrap.com/docs/5.0/getting-started/introduction/

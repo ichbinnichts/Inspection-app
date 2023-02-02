@@ -8,23 +8,29 @@ import { InspectionApiService } from 'src/app/inspection-api.service';
   styleUrls: ['./add-edit-inspection.component.css']
 })
 export class AddEditInspectionComponent {
+
   inspectionList$!:Observable<any[]>;
   statusList$!:Observable<any[]>;
   inspectionTypesList$!: Observable<any[]>;
 
+  constructor(private service:InspectionApiService){}
+  
 
-  constructor(private service:InspectionApiService){
-
-  }
-  ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    
-  }
   @Input() inspection:any;
   id: number = 0;
   status: string = "";
   comments: string = "";
   inspectionTypeId!: number;
 
+
+  ngOnInit(): void {
+    this.id = this.inspection.id;
+    this.status = this.inspection.status;
+    this.inspectionTypeId = this.inspection.inspectionTypeId;
+    this.comments = this.inspection.comments;
+    this.statusList$ = this.service.getStatuses();
+    this.inspectionList$ = this.service.getInspectionList();
+    this.inspectionTypesList$ = this.service.getInspectionTypeList();
+
+  }
 }

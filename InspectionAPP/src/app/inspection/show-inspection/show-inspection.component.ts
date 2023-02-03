@@ -39,6 +39,10 @@ export class ShowInspectionComponent {
     this.addModalTitle = 'Add Inspection';
     this.activateAddEditInspectionComponent = true;
   }
+  modalClose(){
+    this.activateAddEditInspectionComponent = false;
+    this.inspectionList$ = this.service.getInspectionList();
+  }
 
   refreshInspectionTypesMap(){
     this.service.getInspectionTypeList().subscribe(data => {

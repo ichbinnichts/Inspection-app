@@ -50,7 +50,7 @@ export class ShowInspectionComponent {
 
       for(let i=0;i<data.length;i++){
         this.inspectionTypesMap.set(this.inspectionTypesList[i], 
-          this.inspectionTypesList[i].inpectionName);
+          this.inspectionTypesList[i].inspectionName);
       }
     })
   }

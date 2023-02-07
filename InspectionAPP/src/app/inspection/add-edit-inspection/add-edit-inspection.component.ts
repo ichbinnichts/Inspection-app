@@ -59,6 +59,31 @@ export class AddEditInspectionComponent {
 
   }
   updateInspection(){
-    
+    var inspection = {
+      id: this.id,
+      status:this.status,
+      comments:this.comments,
+      inspectionTypeId:this.inspectionTypeId
+    }
+    var id:number = this.id;
+    this.service.updateInspection(id, inspection).subscribe(res => {
+      var closeModalBtn = document.getElementById('add-adit-modal-close');
+      if(closeModalBtn){
+        closeModalBtn.click();
+      }
+
+      var showUpdateSuccess = document.getElementById('update-success-alert');
+      if(showUpdateSuccess){
+        showUpdateSuccess.style.display = 'block';
+      }
+
+      setTimeout(function() {
+        if(showUpdateSuccess){
+          showUpdateSuccess.style.display = 'none';
+        }
+      }, 4000);
+    })
   }
 }
+
+

@@ -35,6 +35,27 @@ export class ShowInspectionComponent {
     this.activateAddEditInspectionComponent = true;
   }
 
+  delete(item:any){
+    if(confirm(`Are you sure you want to delete the inspection ${item.id}`)){
+      this.service.deleteInspection(item.id).subscribe(res => {
+        var closeModalBtn = document.getElementById('add-edit-modal-close');
+        if(closeModalBtn){
+          closeModalBtn.click();
+        }
+
+        var showDeleteSuccess = document.getElementById('delete-success-alert');
+        if(showDeleteSuccess){
+          showDeleteSuccess.style.display = 'block';
+        }
+        setTimeout(function() {
+          if(showDeleteSuccess){
+            showDeleteSuccess.style.display = 'none';
+          }
+        }, 4000);
+        this.inspectionList$ = this.service.getInspectionList();
+      })
+    }
+  }
   modalAdd(){
     this.inspection = {
       id:0,
